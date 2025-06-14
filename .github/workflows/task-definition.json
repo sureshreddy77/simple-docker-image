@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
             "name": "anulatest",
-            "image": "253014708360.dkr.ecr.us-east-1.amazonaws.com/anusha/sample:latest",
+            "image": "253014708360.dkr.ecr.us-east-1.amazonaws.com/development:c3755861e0ca536ce99cc083644ba539f8edc707",
             "cpu": 0,
             "portMappings": [
                 {
@@ -16,10 +16,8 @@
             ],
             "essential": true,
             "environment": [],
-            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "ulimits": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
@@ -29,8 +27,7 @@
                     "max-buffer-size": "25m",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
-                },
-                "secretOptions": []
+                }
             },
             "systemControls": []
         }

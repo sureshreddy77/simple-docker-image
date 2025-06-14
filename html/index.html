@@ -2,49 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Nice Website</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anu's Tech School</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    nav {
+      background-color: #005599;
+      text-align: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-  <!-- Header -->
-  <header class="bg-white shadow">
-    <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-blue-600">MyBrand</h1>
-      <nav>
-        <ul class="flex space-x-6 text-sm font-medium">
-          <li><a href="#" class="hover:text-blue-600">Home</a></li>
-          <li><a href="#" class="hover:text-blue-600">About</a></li>
-          <li><a href="#" class="hover:text-blue-600">Services</a></li>
-          <li><a href="#" class="hover:text-blue-600">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header>
+    <h1>Welcome to My Classic Website</h1>
+    <p>Your trusted source since 2003</p>
   </header>
 
-  <!-- Hero Section -->
-  <section class="bg-blue-100 py-20">
-    <div class="max-w-4xl mx-auto text-center px-4">
-      <h2 class="text-4xl font-bold text-blue-800 mb-4">Welcome to My Nice Website</h2>
-      <p class="text-lg text-blue-700 mb-6">We create beautiful and responsive websites tailored to your needs.</p>
-      <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700">Get Started</a>
-    </div>
-  </section>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
 
-  <!-- About Section -->
-  <section class="py-16 bg-white">
-    <div class="max-w-5xl mx-auto px-4 text-center">
-      <h3 class="text-3xl font-semibold text-gray-800 mb-4">About Us</h3>
-      <p class="text-gray-600 text-lg">We are a passionate team of web developers and designers committed to delivering top-quality digital experiences.</p>
-    </div>
-  </section>
+  <div class="container">
+    <h2>About Us</h2>
+    <p>This is a classic example of a simple, no-frills HTML website. Perfect for small businesses, personal portfolios, or informational pages.</p>
+    
+    <h2>Our Services</h2>
+    <ul>
+      <li>Web Development</li>
+      <li>Graphic Design</li>
+      <li>Consulting</li>
+    </ul>
+    
+    <p>We pride ourselves on delivering quality work and timeless design.</p>
+  </div>
 
-  <!-- Footer -->
-  <footer class="bg-gray-100 py-6 mt-16">
-    <div class="max-w-6xl mx-auto px-4 text-center text-gray-600 text-sm">
-      &copy; 2025 MyBrand. All rights reserved.
-    </div>
+  <footer>
+    &copy; 2025 Classic Web Co. All rights reserved.
   </footer>
 
 </body>

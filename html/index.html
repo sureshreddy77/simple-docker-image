@@ -1,82 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Anu's Tech School</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Study Material</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
+      padding: 40px;
       background-color: #f5f5f5;
-      color: #333;
     }
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
+    h1 {
+      color: #2c3e50;
     }
-    nav {
-      background-color: #005599;
-      text-align: center;
-      padding: 10px 0;
+    .material-list {
+      list-style: none;
+      padding: 0;
     }
-    nav a {
-      color: white;
+    .material-list li {
+      background: #ffffff;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .material-list a {
       text-decoration: none;
-      margin: 0 15px;
+      color: #2980b9;
       font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .container {
-      max-width: 800px;
-      margin: 30px auto;
-      background-color: white;
-      padding: 20px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    }
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Welcome to My Classic Website</h1>
-  </header>
-
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
-  </nav>
-
-  <div class="container">
-    <h2>About Us</h2>
-    <p>This is a classic example of a simple, no-frills HTML website. Perfect for small businesses, personal portfolios, or informational pages.</p>
-    
-    <h2>Our Services</h2>
-    <ul>
-      <li>Web Development</li>
-      <li>Graphic Design</li>
-      <li>Consulting</li>
-    </ul>
-    
-    <p>We pride ourselves on delivering quality work and timeless design.</p>
-  </div>
-
-  <footer>
-    &copy; Anu's website. All rights reserved.
-  </footer>
+  <h1>Study Material Downloads</h1>
+  <ul class="material-list">
+    <li><a href="materials/Chapter1-Introduction.pdf" download>📄 Chapter 1: Introduction (PDF)</a></li>
+    <li><a href="materials/Chapter2-Notes.docx" download>📄 Chapter 2: Notes (Word)</a></li>
+    <li><a href="materials/formula-sheet.png" download>🧮 Formula Sheet (Image)</a></li>
+    <li><a href="materials/summary.txt" download>📃 Summary Notes (Text)</a></li>
+  </ul>
 
 </body>
 </html>

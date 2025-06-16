@@ -1,0 +1,318 @@
+What is Virtualization ?
+It is a layer between the Hardware and VMs.
+a single server can be multiple severs for more energy efficient.
+
+What is Containeraization ?
+Containeraization is software which enables operating system to create multipe isolated user-spacae for applications. 
+Container has it's own configuration like root filesystem,Network ports, Processes, Devices and Memory
+
+What are Container?
+Containers are similar like VMs but all share Host OS Kernal and all are isolated, 
+Containers are running instances of docker images.
+Container image is a lightweight, standalone, executable package of a peace of software that included everything needed to run the application
+you can't run windows based containers on Linux machines and all the configuration contain inside the container
+ 
+A container is a package which contains everything that is needed to run an application, but not the kernel.
+The kernel is provided by the container engine that is running on the container host.
+Using containers makes it possible to run a very efficient minimal instance on top of an existing operating system.
+Containers take away the problems of software installation and dependencies, and are much more efficient than a virtual machine. 
+
+Benifits of Containers ?
+The container technology is making IT more efficient. 
+Many instances of an application can be deployed easily to run on top of a single kernel
+A user in one container cannot access resources that are assigned to another container.
+Due to the fact that many containers can be used on top of the same kernel,resources can be used in a more efficient manner.
+Also, deployment is much easier due to the relatively small size of containers.
+
+Using containers should make it easy for the end users to run applications on different platforms. 
+Container technologies, like Docker, take away the need to consider different platform characteristics.
+The container just runs as an isolated environment on top of the platform. 
+Everything specific to the application is bundled in a package that runs on top of any hardware platform.
+This allows the developer to focus on the application, not on the underlying platform.
+
+ -lightweight and speed
+  -Less resources are used
+  -Booting of containers are very fast
+  -start, stop, kill and remove containers are very fast and quick.
+  -Scaling(Horizental)
+
+What Are the Differences between Containers and Virtualization?
+We use containers if we want to run multiple copies of a single application.
+We use virtual machines if we need the flexibility of running multiple applications.
+We use virtual machines if we need to be able to run on any operating system.
+Both containers and virtual machines can run together in a IaaS Cloud.
+- VM virtualize Hardware Level
+- Containers Virtualize OS level
+
+What is docker?
+It is a container technology, which enables OS to create multiple Isolated user-space for application.  
+Docker is a containter platform
+
+Docker Developed in 95 % with Go Language and 5 % wit Python 
+
+What does docker do ?
+build -->Ship --> run  containerized apps in your environment.
+
+Docker image is output of the build Phase. Next you can share or run 
+Docker provide platform to share which is called docker Hub.
+
+Diff b/w docker hub and docker store.
+Docker store contains the images which are verified by docker.
+Docket hub is more likely community use or you can share
+
+What is Docker Image ?
+It's like a Package or Template. It is used to create 1 or more Containers
+
+What is Docker Repository ?
+It is like a folder in docker hub where you save all your docker images. It can be Private or public repository.
+
+What is Docker Registry?
+Docker registry is a repository for Docker images. Using Docker registry, you can build and share images with your team. 
+A registry can be public or private. Docker Inc provides a hosted registry service called Docker Hub. 
+It allows you to upload and download images from a central location. If your repository is public, all your images can be accessed by other Docker hub users. 
+You can also create a private registry in Docker Hub. Docker hub acts like git, where you can build your images locally on your laptop, commit it and then can be pushed to the Docker hub.
+
+Docker Engine ?
+Docker Engine is the underlying client-server technology that builds and runs containers using Docker's components and services.
+Docker Engine supports the tasks and workflows involved to build, ship and run container-based applications. 
+The engine creates a server-side daemon process that hosts images, containers, networks and storage volumes.
+The engine also provides a client-side command-line interface (CLI) that enables users to interact with the daemon through the Docker Engine API	
+
+What is Docker Engine API ?
+
+Docker Components:
+Docker is composed of following four components
+
+ -Docker Client and Daemon.
+ -Images
+ -Docker registries
+ -Containers
+
+
+What is docker file ?
+A text file with instructions to build image automation of docker image creation
+
+How to create Private Registry ?
+https://blog.sleeplessbeastie.eu/2018/04/16/how-to-setup-private-docker-registry/
+
+What is docker swam ?
+What is Docker Compose ?
+
+*********************************************************************************************
+Docker Installation 
+
+yum install update -y
+sudo yum install -y yum-utils
+yum install -y docker
+systemctl start docker
+systemctl enable docker
+systemctl status docker
+systemctl daemon-reload
+
+https://docs.docker.com/install/linux/docker-ce/centos/
+
+    sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+    sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    sudo yum-config-manager --enable docker-ce-nightly && yum-config-manager --enable docker-ce-test
+    sudo yum install docker-ce docker-ce-cli containerd.io
+    yum list docker-ce --showduplicates | sort -r
+    sudo yum install docker-ce-17.03.3.ce-1.el7
+    sudo systemctl start docker
+    sudo systemctl enable docker
+
+
+Docker INstallation RHEL-8
+https://linuxconfig.org/how-to-install-docker-in-rhel-8
+sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+sudo dnf repolist -v
+dnf list docker-ce --showduplicates | sort -r
+sudo dnf install docker-ce-3:18.09.1-3.el7
+sudo dnf install --nobest docker-ce
+sudo systemctl enable --now docker
+
+8) Docker installation
+ yum install curl
+   curl -s https://packages.cloud.google.com/apt/doc/aptkey.gpg | apt-key add -
+   curl -s https://packages.cloud.google.com/apt/doc/aptkey.gpg | apt-key add -
+
+cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+deb http://apt.kubernetes.io/kubernetes-xenial main
+EOF
+
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+cat <<EOF > /etc/apt/sources.list.d/kubernetes.list
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+apt-get update
+apt-get install -y docker.io kubelet kubeadm kubectl kubernetes-cni
+
+
+1)  Docker Installation
+2)  curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/${KUBE_VERSION}/bin/linux/amd64/kubectl
+    curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/v1.5.4/bin/linux/amd64/kubectl
+    chmod +x kubectl && mv -f kubectl /usr/bin/ 
+    cp kubectl /usr/bin
+	
+3) curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+   chmod +x minikube && mv -f minikube /usr/bin
+    cp kubectl /usr/bin
+
+***********************************************************************************
+*********************************************************************	
+Creating docker file ?
+
+FROM ubuntu:17.04
+RUN apt-get update
+RUN apt-get install -y python python-pip
+RUN pip install flask
+COPY /home/dev_user/source-code/app.py /opt/app.py
+ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0
+
+docker build . command to build docker image 
+docker build . -t Image_Name (.is directory)
+then you should create image with your name tag
+login to your docker account
+docker login
+docker push Image_Name which has tag
+
+
+https://code.visualstudio.com/download
+https://success.docker.com/article/rbac-example-use-case-17-03
+https://www.opencontainers.org/
+
+export PS1="\u$ 
+sudo usermod -a -G docker ec2-user
+
+
+Basic
+    -docker version
+	-docker --version
+	-docker -v
+	-docker info
+	-docker --help
+	-docker login
+	-docker history Image_Name/Id
+	-docker rename old_name new_name       "Rename container"
+	
+Images
+    -docker images          List images
+	-docker images -q
+	-docker images -f "dangling=true"
+	-docker images -f "dangling=true" -q
+	-docker inspect
+	-docker images -a
+    -docker pull 
+    -docker pull ubuntu:18.1	
+
+Containiers
+    -docker ps                "List running containers"
+	-docker ps -a             "List all containers"
+    -docker run Image_Name	
+	-docker run -it Image_Name
+	-docker run --name MyUbuntu1 -it ubuntu bash    " Run in a new named container"
+	-docker exec -it Image_Name /bash               "Run a command"
+	-docker start Container_Name/Id
+	-docker stop Container_Name/Id
+	-docker kill Container_Name/Id
+	-docker run --name Container_Name -e MYSQL_ROOT_PASSWORD=123 -p 4444:4444  mysal:latest     " Run in a new named container" 
+	-docker run -p 80:80 -v Path from local_,achine:/var/www/html/ hello-world               mounting local file to container.
+
+System
+    -docker stats
+    -docker system df
+    -docker systrm prune
+	-docker stats $(docker ps | awk '{if(NR>1) print $NF}')
+
+Attach­/detach
+    -docker attach #container              Attach #1
+    -docker start -a                       Attach #2
+    -docker exec -it #container bash       Attach #3
+    -CTRL-P + CTRL+Q                       Detach 
+Logs -docker logs -f containerID
+Remove
+    -docker rmi    Image_Name/Id           Remove Image
+	-docker rmi -f Image_Name/Id           Rwmove Image
+	-docker rm Container_Name/Id           Remove container  
+    -docker rmi `docker images -q`	       Remove all images
+	-docker rm `docker ps --no-trunc -aq`  Remove all containers
+	-docker rm $(docker ps -all -q)
+
+    -docker inspect Container_ID
+    -docker commit  Container_ID
+	-docker diff    Container_ID
+	-docker tag ubuntu:latest suresh:1.0
+	
+    -Docker Deamon, 
+    -Docker Client
+	
+Volume	
+    - docker volume create my_data
+	- docker run -v my_data:/path  ---> to save the data: Volume mount
+	- docker run -v source:/destination
+    - docker -v data_volume:/var/lib/mysql  mysql
+    - docker -v /path:/var/lib/mysql mysql    ---> Bind Mount
+    - docker run --mount type=bind, source=/path, target=/var/lib/mysql mysql
+
+#!/bin/bash
+# Delete all containers
+docker rm $(docker ps -a -q)
+# Delete all images
+docker rmi $(docker images -q)
+
+
+*********************************************************************************************************
+docker tag local-image:tagname new-repo:tagname
+docker push new-repo:tagname
+	
+docker tag python:latest suresh0077/dockertest:1.0	
+docker push suresh0077/dockertest:1.0	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
